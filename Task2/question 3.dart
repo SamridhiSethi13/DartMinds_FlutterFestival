@@ -15,8 +15,9 @@ void main() {
     print(key);
   });
 
-  stdout.write("\nWho's birthday do you want to know? ");
+  print("\nWho's birthday do you want to know? ");
   String choice = stdin.readLineSync()!;
+  
   if (birthdays.containsKey(choice)) {
     print("\n$choice's birthdate is ${birthdays[choice]}\n");
   } else {
