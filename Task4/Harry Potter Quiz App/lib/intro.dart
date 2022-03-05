@@ -23,6 +23,7 @@ class _IntroState extends State<Intro> {
     return Container(
       child: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             const Text(
               'Welcome !',
@@ -34,10 +35,36 @@ class _IntroState extends State<Intro> {
             ),
             TextField(
               controller: myController,
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 hintText: 'Enter your name',
                 labelText: 'Name',
-                border: OutlineInputBorder(),
+                labelStyle: TextStyle(
+                  color: Colors.pinkAccent[700],
+                    fontSize: 20,
+                    fontWeight: FontWeight.normal,
+                    fontFamily: 'Harry P',
+                ),
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.pinkAccent[700]!,
+                    width: 2.0,
+                  ),
+                  borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.pinkAccent[700]!,
+                    width: 2.0,
+                  ),
+                  borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.pinkAccent[700]!,
+                    width: 2.0,
+                  ),
+                  borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                ),
               ),
               textInputAction: TextInputAction.done,
             ),
