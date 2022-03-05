@@ -70,6 +70,19 @@ class _QuestionTextState extends State<QuestionText> {
     if ((_index >= 10)) {
       return Result(_sum, widget.name);
     } else {
+      Scaffold(
+        backgroundColor: Colors.purple[100],
+        appBar: AppBar(
+            backgroundColor: Colors.pinkAccent[700],
+            title: Center(
+                child: Text('Harry Potter Quiz',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontFamily: 'Harry P',
+                        fontSize: 50,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.pink[50])))),
+      );
       return SingleChildScrollView(
           child: Container(
               margin: const EdgeInsets.all(10.0),
