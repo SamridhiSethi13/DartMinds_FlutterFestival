@@ -1,14 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/feedback.dart';
 
 class Result extends StatelessWidget {
   final int _sum;
-  const Result(this._sum);
-  Widget res(int _sum) {
+  final String name;
+  const Result(this._sum, this.name);
+  Widget res(int _sum, name) {
     if (_sum >= 26) {
-      return const Text(
-        "Well done! You're a big Harry Potter fan and it shows!",
-        style: TextStyle(
+      return Text(
+        "Well done! $name, you're a big Harry Potter fan and it shows!",
+        style: const TextStyle(
           color: Colors.pink,
           fontSize: 40,
           fontWeight: FontWeight.normal,
@@ -17,9 +19,9 @@ class Result extends StatelessWidget {
         textAlign: TextAlign.center,
       );
     } else if (_sum >= 10 && _sum <= 25) {
-      return const Text(
-        "Hmm, well you know one or two things about Harry Potter, but you'll have to do better than that! ",
-        style: TextStyle(
+      return Text(
+        "Hmm, $name, well you know one or two things about Harry Potter, but you'll have to do better than that! ",
+        style: const TextStyle(
           fontSize: 40,
           color: Colors.pink,
           fontWeight: FontWeight.bold,
@@ -28,9 +30,9 @@ class Result extends StatelessWidget {
         textAlign: TextAlign.center,
       );
     } else {
-      return const Text(
-        "Oh no! A troll could score higher! Have another go!",
-        style: TextStyle(
+      return Text(
+        "Oh no! $name, a troll could score higher! Have another go!",
+        style: const TextStyle(
           fontSize: 40,
           color: Colors.pink,
           fontWeight: FontWeight.bold,
@@ -53,8 +55,37 @@ class Result extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Harry P',
                   )),
-              Padding(padding: EdgeInsets.all(10)),
-              res(_sum),
+              const Padding(padding: EdgeInsets.all(10)),
+              res(_sum, name),
+              ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute<void>(
+                    builder: (context) => const FeedBack()));
+              },
+              child: const Text(
+                'Finish',
+                style: TextStyle(
+                    fontSize: 50,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Harry P',
+                ),
+                textAlign: TextAlign.center,
+              ),
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0)
+                  )
+                ),
+                alignment: Alignment.center,
+                backgroundColor: MaterialStateProperty.all(Colors.pinkAccent[700]),
+                elevation: MaterialStateProperty.all(5.0),
+                shadowColor: MaterialStateProperty.all(Colors.pinkAccent[700]),
+                overlayColor: MaterialStateProperty.all(Colors.purple[100]),
+              )
+            ),
             ])));
   }
 }

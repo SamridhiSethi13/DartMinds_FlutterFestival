@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'QuestionText.dart';
+import 'intro.dart';
 
 void main() => runApp(QuizApp());
 
@@ -20,7 +21,7 @@ class QuizApp extends StatelessWidget {
                       fontSize: 50,
                       fontWeight: FontWeight.normal,
                       color: Colors.pink[50])))),
-      body: QuestionText(),
+      body: const Intro(),
     ));
   }
 }

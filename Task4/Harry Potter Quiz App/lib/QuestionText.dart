@@ -5,7 +5,8 @@ import 'package:flutter/rendering.dart';
 import 'result.dart';
 
 class QuestionText extends StatefulWidget {
-  const QuestionText({Key? key}) : super(key: key);
+  final String name;
+  const QuestionText({Key? key, required this.name}) : super(key: key);
 
   @override
   _QuestionTextState createState() => _QuestionTextState();
@@ -67,14 +68,14 @@ class _QuestionTextState extends State<QuestionText> {
   @override
   Widget build(BuildContext context) {
     if ((_index >= 10)) {
-      return Result(_sum);
+      return Result(_sum, widget.name);
     } else {
       return SingleChildScrollView(
           child: Container(
               margin: const EdgeInsets.all(10.0),
               child: Column(
                 children: <Widget>[
-                  Padding(padding: EdgeInsets.all(5)),
+                  const Padding(padding: EdgeInsets.all(5)),
                   Container(
                       child: Text(
                     _ques[_index],
@@ -86,7 +87,7 @@ class _QuestionTextState extends State<QuestionText> {
                     ),
                     textAlign: TextAlign.center,
                   )),
-                  Padding(padding: EdgeInsets.all(10)),
+                  const Padding(padding: EdgeInsets.all(10)),
                   Container(
                       child: Image.asset(
                     "assets/images/${_link[_index]}.jpg",
@@ -94,7 +95,7 @@ class _QuestionTextState extends State<QuestionText> {
                     width: 320,
                     fit: BoxFit.cover,
                   )),
-                  Padding(padding: EdgeInsets.all(10)),
+                  const Padding(padding: EdgeInsets.all(10)),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       primary: Colors.purple[900],
