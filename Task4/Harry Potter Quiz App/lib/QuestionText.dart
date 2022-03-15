@@ -73,15 +73,15 @@ class _QuestionTextState extends State<QuestionText> {
       return Scaffold(
         backgroundColor: Colors.purple[100],
         appBar: AppBar(
-          backgroundColor: Colors.pinkAccent[700],
-          title: Center(
-              child: Text('Harry Potter Quiz',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontFamily: 'Harry P',
-                      fontSize: 50,
-                      fontWeight: FontWeight.normal,
-                      color: Colors.pink[50])))),
+            backgroundColor: Colors.pinkAccent[700],
+            title: Center(
+                child: Text('Harry Potter Quiz',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontFamily: 'Harry P',
+                        fontSize: 50,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.pink[50])))),
         body: SingleChildScrollView(
             child: Container(
                 margin: const EdgeInsets.all(10.0),
