@@ -1,16 +1,8 @@
-# flutter_application_2
+# Harry Potter Quiz Application
 
-A new Flutter project.
+This app has 10 questions and the marking scheme is +3 for a correct answer and -1 for an incorrect answer.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+https://user-images.githubusercontent.com/90917632/156890924-6268ca65-d5ef-48c5-bd49-1010d193bfe2.mp4
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
