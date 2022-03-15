@@ -1,16 +1,9 @@
-# flutter_application_3
+# Memories Application
 
-A new Flutter project.
+In this user can upload image from the gallery and store in the firebase.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+https://user-images.githubusercontent.com/90917632/158352955-9c246cc1-6bcd-43b4-90ef-8ceea6be7aa6.mp4
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
