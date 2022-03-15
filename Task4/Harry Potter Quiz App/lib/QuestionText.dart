@@ -70,7 +70,7 @@ class _QuestionTextState extends State<QuestionText> {
     if ((_index >= 10)) {
       return Result(_sum, widget.name);
     } else {
-      Scaffold(
+      return Scaffold(
         backgroundColor: Colors.purple[100],
         appBar: AppBar(
             backgroundColor: Colors.pinkAccent[700],
@@ -82,116 +82,118 @@ class _QuestionTextState extends State<QuestionText> {
                         fontSize: 50,
                         fontWeight: FontWeight.normal,
                         color: Colors.pink[50])))),
+        body: SingleChildScrollView(
+            child: Container(
+                margin: const EdgeInsets.all(10.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    const Padding(padding: EdgeInsets.all(5)),
+                    Container(
+                        child: Text(
+                      _ques[_index],
+                      style: TextStyle(
+                        fontFamily: 'Playfair Display',
+                        fontSize: 30,
+                        color: Colors.pink[800],
+                        fontWeight: FontWeight.w700,
+                      ),
+                      textAlign: TextAlign.center,
+                    )),
+                    const Padding(padding: EdgeInsets.all(10)),
+                    Container(
+                        child: Image.asset(
+                      "assets/images/${_link[_index]}.jpg",
+                      height: 300,
+                      width: 320,
+                      fit: BoxFit.cover,
+                    )),
+                    const Padding(padding: EdgeInsets.all(10)),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.purple[900],
+                        onPrimary: Colors.white,
+                        elevation: 20.0,
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10.0, horizontal: 20.0),
+                      ),
+                      onPressed: () => _answer('Harry Potter'),
+                      child: const Text(
+                        "Harry Potter",
+                        style: TextStyle(
+                          fontFamily: 'Playfair Display',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 26.0,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 15.0,
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.purple[900],
+                        onPrimary: Colors.white,
+                        elevation: 20.0,
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10.0, horizontal: 20.0),
+                      ),
+                      onPressed: () => _answer('Ron Weasley'),
+                      child: const Text(
+                        "Ron Weasley",
+                        style: TextStyle(
+                          fontFamily: 'Playfair Display',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 26.0,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 15.0,
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.purple[900],
+                        onPrimary: Colors.white,
+                        elevation: 20.0,
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10.0, horizontal: 20.0),
+                      ),
+                      onPressed: () => _answer('Hermione Granger'),
+                      child: const Text(
+                        "Hermione Granger",
+                        style: TextStyle(
+                          fontFamily: 'Playfair Display',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 26.0,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 15.0,
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.purple[900],
+                        onPrimary: Colors.white,
+                        elevation: 20.0,
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10.0, horizontal: 20.0),
+                      ),
+                      onPressed: () => _answer('Severus Snape'),
+                      child: const Text(
+                        "Severus Snape",
+                        style: TextStyle(
+                          fontFamily: 'Playfair Display',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 26.0,
+                        ),
+                      ),
+                    ),
+                  ],
+                ))),
       );
-      return SingleChildScrollView(
-          child: Container(
-              margin: const EdgeInsets.all(10.0),
-              child: Column(
-                children: <Widget>[
-                  const Padding(padding: EdgeInsets.all(5)),
-                  Container(
-                      child: Text(
-                    _ques[_index],
-                    style: TextStyle(
-                      fontFamily: 'Playfair Display',
-                      fontSize: 30,
-                      color: Colors.pink[800],
-                      fontWeight: FontWeight.w700,
-                    ),
-                    textAlign: TextAlign.center,
-                  )),
-                  const Padding(padding: EdgeInsets.all(10)),
-                  Container(
-                      child: Image.asset(
-                    "assets/images/${_link[_index]}.jpg",
-                    height: 300,
-                    width: 320,
-                    fit: BoxFit.cover,
-                  )),
-                  const Padding(padding: EdgeInsets.all(10)),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.purple[900],
-                      onPrimary: Colors.white,
-                      elevation: 20.0,
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 20.0),
-                    ),
-                    onPressed: () => _answer('Harry Potter'),
-                    child: const Text(
-                      "Harry Potter",
-                      style: TextStyle(
-                        fontFamily: 'Playfair Display',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 26.0,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 15.0,
-                  ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.purple[900],
-                      onPrimary: Colors.white,
-                      elevation: 20.0,
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 20.0),
-                    ),
-                    onPressed: () => _answer('Ron Weasley'),
-                    child: const Text(
-                      "Ron Weasley",
-                      style: TextStyle(
-                        fontFamily: 'Playfair Display',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 26.0,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 15.0,
-                  ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.purple[900],
-                      onPrimary: Colors.white,
-                      elevation: 20.0,
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 20.0),
-                    ),
-                    onPressed: () => _answer('Hermione Granger'),
-                    child: const Text(
-                      "Hermione Granger",
-                      style: TextStyle(
-                        fontFamily: 'Playfair Display',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 26.0,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 15.0,
-                  ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.purple[900],
-                      onPrimary: Colors.white,
-                      elevation: 20.0,
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 20.0),
-                    ),
-                    onPressed: () => _answer('Severus Snape'),
-                    child: const Text(
-                      "Severus Snape",
-                      style: TextStyle(
-                        fontFamily: 'Playfair Display',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 26.0,
-                      ),
-                    ),
-                  ),
-                ],
-              )));
     }
   }
 }

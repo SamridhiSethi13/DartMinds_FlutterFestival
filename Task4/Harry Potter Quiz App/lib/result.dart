@@ -12,7 +12,7 @@ class Result extends StatelessWidget {
         "Well done! $name, you're a big Harry Potter fan and it shows!",
         style: const TextStyle(
           color: Colors.pink,
-          fontSize: 40,
+          fontSize: 30,
           fontWeight: FontWeight.normal,
           fontFamily: 'Harry P',
         ),
@@ -22,7 +22,7 @@ class Result extends StatelessWidget {
       return Text(
         "Hmm, $name, well you know one or two things about Harry Potter, but you'll have to do better than that! ",
         style: const TextStyle(
-          fontSize: 40,
+          fontSize: 30,
           color: Colors.pink,
           fontWeight: FontWeight.bold,
           fontFamily: 'Harry P',
@@ -33,7 +33,7 @@ class Result extends StatelessWidget {
       return Text(
         "Oh no! $name, a troll could score higher! Have another go!",
         style: const TextStyle(
-          fontSize: 40,
+          fontSize: 30,
           color: Colors.pink,
           fontWeight: FontWeight.bold,
           fontFamily: 'Harry P',
@@ -45,47 +45,63 @@ class Result extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 200, horizontal: 10),
-            child: Column(children: [
-              Text('Your Score is ' + _sum.toString(),
-                  style: const TextStyle(
-                    fontSize: 50,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Harry P',
-                  )),
-              const Padding(padding: EdgeInsets.all(10)),
-              res(_sum, name),
-              ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                context,
-                MaterialPageRoute<void>(
-                    builder: (context) => const FeedBack()));
-              },
-              child: const Text(
-                'Finish',
-                style: TextStyle(
-                    fontSize: 50,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Harry P',
+    return Scaffold(
+      backgroundColor: Colors.purple[100],
+      appBar: AppBar(
+          backgroundColor: Colors.pinkAccent[700],
+          title: Center(
+              child: Text('Harry Potter Quiz',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontFamily: 'Harry P',
+                      fontSize: 50,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.pink[50])))),
+      body: Center(
+          child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 200, horizontal: 10),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                Text('Your Score is ' + _sum.toString(),
+                    style: const TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Harry P',
+                    )),
+                const Padding(padding: EdgeInsets.all(10)),
+                res(_sum, name),
+                const Padding(padding: EdgeInsets.all(10)),
+                ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute<void>(
+                      builder: (context) => const FeedBack()));
+                },
+                child: const Text(
+                  'Finish',
+                  style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Harry P',
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0)
+                    )
+                  ),
+                  alignment: Alignment.center,
+                  backgroundColor: MaterialStateProperty.all(Colors.pinkAccent[700]),
+                  elevation: MaterialStateProperty.all(5.0),
+                  shadowColor: MaterialStateProperty.all(Colors.pinkAccent[700]),
+                  overlayColor: MaterialStateProperty.all(Colors.purple[100]),
+                )
               ),
-              style: ButtonStyle(
-                shape: MaterialStateProperty.all(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0)
-                  )
-                ),
-                alignment: Alignment.center,
-                backgroundColor: MaterialStateProperty.all(Colors.pinkAccent[700]),
-                elevation: MaterialStateProperty.all(5.0),
-                shadowColor: MaterialStateProperty.all(Colors.pinkAccent[700]),
-                overlayColor: MaterialStateProperty.all(Colors.purple[100]),
-              )
-            ),
-            ])));
+              ]))),
+    );
   }
 }
